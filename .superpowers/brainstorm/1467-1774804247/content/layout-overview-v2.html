@@ -1,0 +1,212 @@
+<h2>Layout-Konzept: Steuerrechner SPA (Hell)</h2>
+<p class="subtitle">Helles Design mit achsenbeschriftetem Diagramm</p>
+
+<div class="mockup">
+  <div class="mockup-header">Desktop-Ansicht (~1200px+) — Heller Modus</div>
+  <div class="mockup-body" style="background:#f5f5f5;color:#333;font-family:system-ui;padding:0;">
+
+    <!-- Header -->
+    <div style="background:#ffffff;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #e0e0e0;">
+      <span style="font-size:18px;font-weight:bold;color:#2563eb;">Steuerrechner 2025</span>
+      <div style="display:flex;gap:8px;">
+        <button style="background:#fff;color:#333;border:1px solid #d0d0d0;padding:4px 12px;border-radius:4px;font-size:12px;cursor:pointer;">Laden</button>
+        <button style="background:#2563eb;color:#fff;border:none;padding:4px 12px;border-radius:4px;font-size:12px;cursor:pointer;">Speichern</button>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div style="display:flex;align-items:center;background:#ffffff;padding:0 12px;gap:4px;border-bottom:1px solid #e0e0e0;">
+      <div style="background:#f5f5f5;color:#2563eb;padding:8px 16px;border-radius:6px 6px 0 0;font-size:13px;font-weight:bold;border:1px solid #e0e0e0;border-bottom:none;">Szenario 1</div>
+      <div style="color:#999;padding:8px 16px;font-size:13px;">Teilzeit</div>
+      <div style="color:#999;padding:8px 16px;font-size:13px;">Mit Ehepartner</div>
+      <div style="color:#2563eb;padding:8px 12px;font-size:16px;cursor:pointer;font-weight:bold;">+</div>
+    </div>
+
+    <!-- Main Content -->
+    <div style="display:flex;gap:0;min-height:480px;">
+
+      <!-- Left: Eingabe -->
+      <div style="width:40%;padding:16px;border-right:1px solid #e0e0e0;overflow-y:auto;background:#fafafa;">
+        <div style="font-size:14px;font-weight:bold;color:#2563eb;margin-bottom:12px;">Eingaben</div>
+
+        <!-- Person 1 -->
+        <div style="background:#ffffff;border-radius:6px;padding:12px;margin-bottom:10px;border:1px solid #e0e0e0;">
+          <div style="font-size:12px;color:#2563eb;margin-bottom:8px;font-weight:bold;">Hauptverdiener</div>
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="font-size:11px;color:#666;">Bruttojahresgehalt</span>
+              <div style="background:#f5f5f5;border:1px solid #d0d0d0;border-radius:3px;padding:3px 8px;color:#333;font-size:12px;width:120px;text-align:right;">65.000 EUR</div>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="font-size:11px;color:#666;">Fahrtstrecke (km, einfach)</span>
+              <div style="background:#f5f5f5;border:1px solid #d0d0d0;border-radius:3px;padding:3px 8px;color:#333;font-size:12px;width:120px;text-align:right;">25 km</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gemeinsam -->
+        <div style="background:#ffffff;border-radius:6px;padding:12px;margin-bottom:10px;border:1px solid #e0e0e0;">
+          <div style="font-size:12px;color:#2563eb;margin-bottom:8px;font-weight:bold;">Gemeinsam</div>
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="font-size:11px;color:#666;">Anzahl Kinder</span>
+              <div style="background:#f5f5f5;border:1px solid #d0d0d0;border-radius:3px;padding:3px 8px;color:#333;font-size:12px;width:120px;text-align:right;">2</div>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="font-size:11px;color:#666;">Einkuenfte Vermietung (Jahr)</span>
+              <div style="background:#f5f5f5;border:1px solid #d0d0d0;border-radius:3px;padding:3px 8px;color:#333;font-size:12px;width:120px;text-align:right;">12.000 EUR</div>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="font-size:11px;color:#666;">Kirchensteuer</span>
+              <div style="display:flex;gap:6px;align-items:center;">
+                <div style="width:32px;height:18px;background:#2563eb;border-radius:9px;position:relative;"><div style="width:14px;height:14px;background:white;border-radius:50%;position:absolute;top:2px;right:2px;"></div></div>
+                <span style="font-size:11px;color:#666;">9%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ehepartner Toggle -->
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+          <div style="width:32px;height:18px;background:#2563eb;border-radius:9px;position:relative;"><div style="width:14px;height:14px;background:white;border-radius:50%;position:absolute;top:2px;right:2px;"></div></div>
+          <span style="font-size:12px;color:#666;">Ehepartner</span>
+        </div>
+
+        <div style="background:#ffffff;border-radius:6px;padding:12px;border:1px solid #e0e0e0;">
+          <div style="font-size:12px;color:#2563eb;margin-bottom:8px;font-weight:bold;">Ehepartner</div>
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="font-size:11px;color:#666;">Bruttojahresgehalt</span>
+              <div style="background:#f5f5f5;border:1px solid #d0d0d0;border-radius:3px;padding:3px 8px;color:#333;font-size:12px;width:120px;text-align:right;">45.000 EUR</div>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="font-size:11px;color:#666;">Fahrtstrecke (km, einfach)</span>
+              <div style="background:#f5f5f5;border:1px solid #d0d0d0;border-radius:3px;padding:3px 8px;color:#333;font-size:12px;width:120px;text-align:right;">15 km</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Ergebnisse -->
+      <div style="width:60%;padding:16px;overflow-y:auto;background:#f5f5f5;">
+        <div style="font-size:14px;font-weight:bold;color:#2563eb;margin-bottom:12px;">Ergebnisse</div>
+
+        <!-- Zusammenfassung -->
+        <div style="display:flex;gap:10px;margin-bottom:16px;">
+          <div style="flex:1;background:#ffffff;border-radius:6px;padding:12px;text-align:center;border:1px solid #e0e0e0;">
+            <div style="font-size:10px;color:#999;text-transform:uppercase;">Brutto (Haushalt)</div>
+            <div style="font-size:20px;font-weight:bold;color:#333;margin-top:4px;">110.000 EUR</div>
+          </div>
+          <div style="flex:1;background:#ffffff;border-radius:6px;padding:12px;text-align:center;border:1px solid #e0e0e0;">
+            <div style="font-size:10px;color:#999;text-transform:uppercase;">Netto (Haushalt)</div>
+            <div style="font-size:20px;font-weight:bold;color:#2563eb;margin-top:4px;">72.340 EUR</div>
+          </div>
+          <div style="flex:1;background:#ffffff;border-radius:6px;padding:12px;text-align:center;border:1px solid #e0e0e0;">
+            <div style="font-size:10px;color:#999;text-transform:uppercase;">Abgabenlast</div>
+            <div style="font-size:20px;font-weight:bold;color:#f59e0b;margin-top:4px;">34,2%</div>
+          </div>
+        </div>
+
+        <!-- Chart mit Achsen (verheiratet = 0-200k) -->
+        <div style="background:#ffffff;border-radius:6px;padding:16px;margin-bottom:16px;border:1px solid #e0e0e0;">
+          <div style="font-size:12px;color:#666;margin-bottom:8px;font-weight:bold;">Netto/Brutto-Kurve (Haushalt, verheiratet)</div>
+          <div style="position:relative;height:200px;margin-left:50px;margin-bottom:24px;margin-right:8px;">
+            <!-- Y-Achse Labels -->
+            <div style="position:absolute;left:-50px;top:-4px;font-size:9px;color:#999;">200k</div>
+            <div style="position:absolute;left:-50px;top:46px;font-size:9px;color:#999;">150k</div>
+            <div style="position:absolute;left:-50px;top:96px;font-size:9px;color:#999;">100k</div>
+            <div style="position:absolute;left:-50px;top:146px;font-size:9px;color:#999;">50k</div>
+            <div style="position:absolute;left:-50px;top:192px;font-size:9px;color:#999;">0</div>
+            <div style="position:absolute;left:-50px;top:86px;font-size:8px;color:#bbb;transform:rotate(-90deg);transform-origin:left center;white-space:nowrap;">Netto (EUR)</div>
+
+            <!-- Grid + Chart -->
+            <svg viewBox="0 0 400 200" style="width:100%;height:100%;display:block;" preserveAspectRatio="none">
+              <!-- Grid lines -->
+              <line x1="0" y1="0" x2="400" y2="0" stroke="#eee" stroke-width="0.5"/>
+              <line x1="0" y1="50" x2="400" y2="50" stroke="#eee" stroke-width="0.5"/>
+              <line x1="0" y1="100" x2="400" y2="100" stroke="#eee" stroke-width="0.5"/>
+              <line x1="0" y1="150" x2="400" y2="150" stroke="#eee" stroke-width="0.5"/>
+              <line x1="0" y1="200" x2="400" y2="200" stroke="#ddd" stroke-width="1"/>
+              <!-- Vertical grid -->
+              <line x1="100" y1="0" x2="100" y2="200" stroke="#eee" stroke-width="0.5"/>
+              <line x1="200" y1="0" x2="200" y2="200" stroke="#eee" stroke-width="0.5"/>
+              <line x1="300" y1="0" x2="300" y2="200" stroke="#eee" stroke-width="0.5"/>
+
+              <!-- Diagonal reference (Brutto=Netto) -->
+              <line x1="0" y1="200" x2="400" y2="0" stroke="#e0e0e0" stroke-width="1" stroke-dasharray="4"/>
+
+              <!-- Netto curve -->
+              <polyline points="0,200 40,185 80,170 120,155 160,138 200,122 240,108 280,96 320,86 360,78 400,72" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+
+              <!-- Marker for current position (110k brutto) -->
+              <line x1="220" y1="0" x2="220" y2="200" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="4"/>
+              <circle cx="220" cy="114" r="4" fill="#f59e0b"/>
+              <text x="226" y="110" fill="#f59e0b" font-size="9" font-weight="bold">110k / 72k</text>
+            </svg>
+
+            <!-- X-Achse Labels -->
+            <div style="display:flex;justify-content:space-between;margin-top:4px;">
+              <span style="font-size:9px;color:#999;">0</span>
+              <span style="font-size:9px;color:#999;">50k</span>
+              <span style="font-size:9px;color:#999;">100k</span>
+              <span style="font-size:9px;color:#999;">150k</span>
+              <span style="font-size:9px;color:#999;">200k</span>
+            </div>
+            <div style="text-align:center;margin-top:2px;font-size:8px;color:#bbb;">Brutto (EUR)</div>
+          </div>
+          <div style="display:flex;gap:16px;font-size:10px;color:#999;">
+            <div><span style="display:inline-block;width:12px;height:2px;background:#2563eb;vertical-align:middle;margin-right:4px;"></span>Nettokurve</div>
+            <div><span style="display:inline-block;width:12px;height:2px;background:#e0e0e0;vertical-align:middle;margin-right:4px;border-bottom:1px dashed #ccc;"></span>Brutto=Netto</div>
+            <div><span style="display:inline-block;width:8px;height:8px;background:#f59e0b;border-radius:50%;vertical-align:middle;margin-right:4px;"></span>Ihre Position</div>
+          </div>
+        </div>
+
+        <!-- Aufschluesselung -->
+        <div style="background:#ffffff;border-radius:6px;padding:12px;border:1px solid #e0e0e0;">
+          <div style="font-size:12px;color:#2563eb;margin-bottom:8px;font-weight:bold;">Berechnungsdetails (monatlich)</div>
+          <table style="width:100%;font-size:11px;border-collapse:collapse;">
+            <tr style="color:#666;border-bottom:1px solid #eee;">
+              <td style="padding:4px 0;">Bruttolohn</td>
+              <td style="text-align:right;padding:4px 0;font-weight:bold;">5.416,67 EUR</td>
+            </tr>
+            <tr style="color:#666;border-bottom:1px solid #eee;">
+              <td style="padding:4px 0;">- Lohnsteuer</td>
+              <td style="text-align:right;padding:4px 0;color:#dc2626;">-892,33 EUR</td>
+            </tr>
+            <tr style="color:#666;border-bottom:1px solid #eee;">
+              <td style="padding:4px 0;">- Solidaritaetszuschlag</td>
+              <td style="text-align:right;padding:4px 0;color:#dc2626;">-0,00 EUR</td>
+            </tr>
+            <tr style="color:#666;border-bottom:1px solid #eee;">
+              <td style="padding:4px 0;">- Kirchensteuer</td>
+              <td style="text-align:right;padding:4px 0;color:#dc2626;">-80,31 EUR</td>
+            </tr>
+            <tr style="color:#666;border-bottom:1px solid #eee;">
+              <td style="padding:4px 0;">- Krankenversicherung (7,3% + Zusatz)</td>
+              <td style="text-align:right;padding:4px 0;color:#dc2626;">-440,42 EUR</td>
+            </tr>
+            <tr style="color:#666;border-bottom:1px solid #eee;">
+              <td style="padding:4px 0;">- Rentenversicherung (9,3%)</td>
+              <td style="text-align:right;padding:4px 0;color:#dc2626;">-503,75 EUR</td>
+            </tr>
+            <tr style="color:#666;border-bottom:1px solid #eee;">
+              <td style="padding:4px 0;">- Arbeitslosenversicherung (1,3%)</td>
+              <td style="text-align:right;padding:4px 0;color:#dc2626;">-70,42 EUR</td>
+            </tr>
+            <tr style="color:#666;border-bottom:1px solid #eee;">
+              <td style="padding:4px 0;">- Pflegeversicherung (1,7%)</td>
+              <td style="text-align:right;padding:4px 0;color:#dc2626;">-92,08 EUR</td>
+            </tr>
+            <tr style="color:#333;font-weight:bold;border-top:2px solid #2563eb;">
+              <td style="padding:6px 0;">= Nettolohn</td>
+              <td style="text-align:right;padding:6px 0;color:#16a34a;">3.337,36 EUR</td>
+            </tr>
+          </table>
+          <div style="margin-top:8px;font-size:10px;color:#aaa;font-style:italic;">
+            Pauschalen: Werbungskosten 1.230 EUR, Entfernungspauschale 25km x 230 Tage x 0,30 EUR = 1.725 EUR
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

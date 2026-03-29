@@ -62,8 +62,8 @@ export function NettoChart({ scenario, currentBrutto, currentNetto }: Props) {
             tick={{ fontSize: 10 }}
           />
           <Tooltip
-            formatter={(value: number) => value.toLocaleString('de-DE') + ' EUR'}
-            labelFormatter={(label: number) => `Brutto: ${label.toLocaleString('de-DE')} EUR`}
+            formatter={(value) => [(Number(value)).toLocaleString('de-DE') + ' EUR']}
+            labelFormatter={(label) => `Brutto: ${Number(label).toLocaleString('de-DE')} EUR`}
           />
           <Legend verticalAlign="bottom" wrapperStyle={{ fontSize: 10 }} />
           <Line
