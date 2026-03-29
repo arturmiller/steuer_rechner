@@ -21,16 +21,27 @@ export function NettoChart({ scenario, currentBrutto, currentNetto }: Props) {
 
   const data = useMemo(() => {
     const points: { brutto: number; netto: number; diagonal: number }[] = [];
+
+    // For married couples, split household brutto proportionally
+    const p1Brutto = scenario.person1.bruttoJahr;
+    const p2Brutto = scenario.hasPartner ? scenario.person2.bruttoJahr : 0;
+    const totalBrutto = p1Brutto + p2Brutto;
+    const p1Ratio = totalBrutto > 0 ? p1Brutto / totalBrutto : 0.5;
+
     for (let brutto = 0; brutto <= maxBrutto; brutto += 1000) {
-      const testScenario: Scenario = {
-        ...scenario,
-        person1: { ...scenario.person1, bruttoJahr: brutto },
-        person2: scenario.hasPartner
-          ? { ...scenario.person2, bruttoJahr: brutto }
-          : scenario.person2,
-      };
+      let testScenario: Scenario;
       if (scenario.hasPartner) {
-        testScenario.person2 = { ...scenario.person2, bruttoJahr: brutto };
+        // X-axis = household brutto, split proportionally
+        testScenario = {
+          ...scenario,
+          person1: { ...scenario.person1, bruttoJahr: Math.round(brutto * p1Ratio) },
+          person2: { ...scenario.person2, bruttoJahr: Math.round(brutto * (1 - p1Ratio)) },
+        };
+      } else {
+        testScenario = {
+          ...scenario,
+          person1: { ...scenario.person1, bruttoJahr: brutto },
+        };
       }
       const result = berechneNetto(testScenario);
       points.push({
