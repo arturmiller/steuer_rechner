@@ -63,7 +63,7 @@ describe('scenarioStore', () => {
 
   it('loads scenarios from import', () => {
     const imported = [
-      { id: 'x', name: 'Imported', person1: { bruttoJahr: 50000, fahrtstreckeKm: 10 }, hasPartner: false, person2: { bruttoJahr: 0, fahrtstreckeKm: 0 }, kinder: 1, vermietungEinkuenfte: 0, kirchensteuer: false },
+      { id: 'x', name: 'Imported', person1: { bruttoJahr: 50000, fahrtstreckeKm: 10, jahreBisRente: null }, hasPartner: false, person2: { bruttoJahr: 0, fahrtstreckeKm: 0, jahreBisRente: null }, kinder: 1, vermietungEinkuenfte: 0, kirchensteuer: false },
     ];
     useScenarioStore.getState().loadScenarios(imported);
     const state = useScenarioStore.getState();
