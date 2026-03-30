@@ -36,6 +36,21 @@ function PersonInputs({
             onChange={(e) => onChange({ ...person, fahrtstreckeKm: Number(e.target.value) || 0 })}
           />
         </label>
+        <label className="flex justify-between items-center">
+          <span className="text-xs text-gray-500">Jahre bis zur Rente</span>
+          <input
+            type="number"
+            min="0"
+            className="w-32 text-right text-sm border border-gray-300 rounded px-2 py-1 bg-gray-50"
+            value={person.jahreBisRente ?? ''}
+            onChange={(e) =>
+              onChange({
+                ...person,
+                jahreBisRente: e.target.value === '' ? null : Number(e.target.value) || 0,
+              })
+            }
+          />
+        </label>
       </div>
     </div>
   );
