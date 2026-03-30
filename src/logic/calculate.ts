@@ -2,6 +2,7 @@ import type { Scenario, PersonResult, Result, Person } from '../types';
 import { berechneWerbungskosten, berechneEntfernungspauschale, berechneSonderausgabenpauschale } from './deductions';
 import { berechneSozialabgaben } from './social';
 import { berechneEinkommensteuer, berechneSoli, berechneKirchensteuer } from './tax';
+import { berechneRentenPrognose } from './rente';
 
 function berechnePersonErgebnis(
   person: Person,
@@ -26,6 +27,7 @@ function berechnePersonErgebnis(
       pflegeversicherung: 0,
       netto: 0,
       pauschalen: { werbungskosten: 0, entfernungspauschale: 0, sonderausgaben: 0, vorsorge: 0 },
+      rentenPrognose: null,
     };
   }
 
@@ -69,6 +71,8 @@ function berechnePersonErgebnis(
 
   const netto = brutto - sozial.gesamt - lohnsteuer - soli - kirchensteuer;
 
+  const rentenPrognose = berechneRentenPrognose(brutto, person.jahreBisRente);
+
   return {
     brutto,
     zvE: Math.max(0, personZvE),
@@ -81,6 +85,7 @@ function berechnePersonErgebnis(
     pflegeversicherung: sozial.pflegeversicherung,
     netto: Math.round(netto * 100) / 100,
     pauschalen: { werbungskosten, entfernungspauschale, sonderausgaben, vorsorge },
+    rentenPrognose,
   };
 }
 
