@@ -38,6 +38,36 @@ export function ResultPanel({ scenario }: { scenario: Scenario }) {
         </div>
       </div>
 
+      {/* Rentenprognose cards */}
+      {(result.person1.rentenPrognose || result.person2?.rentenPrognose) && (
+        <div className="flex gap-3 mb-4">
+          {result.person1.rentenPrognose && (
+            <div className="flex-1 bg-white border border-gray-200 rounded-lg p-3 text-center">
+              <div className="text-[10px] text-gray-500 uppercase">
+                {scenario.hasPartner ? 'Zusätzl. Rente (Person 1)' : 'Zusätzl. Rente/Monat'}
+              </div>
+              <div className="text-xl font-bold text-green-600 mt-1">
+                {formatEur(result.person1.rentenPrognose.monatlicherente)}
+              </div>
+              <div className="text-[10px] text-gray-400 mt-1">
+                {result.person1.rentenPrognose.rentenpunkte.toFixed(2)} Rentenpunkte
+              </div>
+            </div>
+          )}
+          {result.person2?.rentenPrognose && (
+            <div className="flex-1 bg-white border border-gray-200 rounded-lg p-3 text-center">
+              <div className="text-[10px] text-gray-500 uppercase">Zusätzl. Rente (Person 2)</div>
+              <div className="text-xl font-bold text-green-600 mt-1">
+                {formatEur(result.person2.rentenPrognose.monatlicherente)}
+              </div>
+              <div className="text-[10px] text-gray-400 mt-1">
+                {result.person2.rentenPrognose.rentenpunkte.toFixed(2)} Rentenpunkte
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+
       <NettoChart scenario={scenario} currentBrutto={chartBrutto} currentNetto={chartNetto} />
       <CalculationDetails result={result} />
     </div>
