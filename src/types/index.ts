@@ -1,6 +1,7 @@
 export interface Person {
   bruttoJahr: number;
   fahrtstreckeKm: number;
+  jahreBisRente: number | null;
 }
 
 export interface Scenario {
@@ -21,6 +22,11 @@ export interface Pauschalen {
   vorsorge: number;
 }
 
+export interface RentenPrognose {
+  rentenpunkte: number;
+  monatlicherente: number;
+}
+
 export interface PersonResult {
   brutto: number;
   zvE: number;
@@ -33,6 +39,7 @@ export interface PersonResult {
   pflegeversicherung: number;
   netto: number;
   pauschalen: Pauschalen;
+  rentenPrognose: RentenPrognose | null;
 }
 
 export interface Result {
@@ -44,7 +51,7 @@ export interface Result {
 }
 
 export function createDefaultPerson(): Person {
-  return { bruttoJahr: 0, fahrtstreckeKm: 0 };
+  return { bruttoJahr: 0, fahrtstreckeKm: 0, jahreBisRente: null };
 }
 
 export function createDefaultScenario(id: string, name: string): Scenario {
