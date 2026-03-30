@@ -10,7 +10,7 @@ function makeScenario(overrides: Partial<Scenario> = {}): Scenario {
 describe('berechneNetto', () => {
   it('berechnet Single ohne Kinder, 65k Brutto', () => {
     const scenario = makeScenario({
-      person1: { bruttoJahr: 65000, fahrtstreckeKm: 25 },
+      person1: { bruttoJahr: 65000, fahrtstreckeKm: 25, jahreBisRente: null },
       kinder: 0,
       hasPartner: false,
     });
@@ -30,8 +30,8 @@ describe('berechneNetto', () => {
 
   it('berechnet Ehepaar mit Splitting', () => {
     const scenario = makeScenario({
-      person1: { bruttoJahr: 65000, fahrtstreckeKm: 25 },
-      person2: { bruttoJahr: 45000, fahrtstreckeKm: 15 },
+      person1: { bruttoJahr: 65000, fahrtstreckeKm: 25, jahreBisRente: null },
+      person2: { bruttoJahr: 45000, fahrtstreckeKm: 15, jahreBisRente: null },
       hasPartner: true,
       kinder: 2,
     });
@@ -48,11 +48,11 @@ describe('berechneNetto', () => {
 
   it('berücksichtigt Vermietungseinkünfte', () => {
     const ohneVermietung = makeScenario({
-      person1: { bruttoJahr: 50000, fahrtstreckeKm: 10 },
+      person1: { bruttoJahr: 50000, fahrtstreckeKm: 10, jahreBisRente: null },
       vermietungEinkuenfte: 0,
     });
     const mitVermietung = makeScenario({
-      person1: { bruttoJahr: 50000, fahrtstreckeKm: 10 },
+      person1: { bruttoJahr: 50000, fahrtstreckeKm: 10, jahreBisRente: null },
       vermietungEinkuenfte: 20000,
     });
 
@@ -64,11 +64,11 @@ describe('berechneNetto', () => {
 
   it('negative Vermietungseinkünfte senken die Steuerlast', () => {
     const ohneVermietung = makeScenario({
-      person1: { bruttoJahr: 50000, fahrtstreckeKm: 10 },
+      person1: { bruttoJahr: 50000, fahrtstreckeKm: 10, jahreBisRente: null },
       vermietungEinkuenfte: 0,
     });
     const mitVerlust = makeScenario({
-      person1: { bruttoJahr: 50000, fahrtstreckeKm: 10 },
+      person1: { bruttoJahr: 50000, fahrtstreckeKm: 10, jahreBisRente: null },
       vermietungEinkuenfte: -10000,
     });
 
@@ -80,11 +80,11 @@ describe('berechneNetto', () => {
 
   it('Kirchensteuer erhöht Abzüge', () => {
     const ohne = makeScenario({
-      person1: { bruttoJahr: 50000, fahrtstreckeKm: 10 },
+      person1: { bruttoJahr: 50000, fahrtstreckeKm: 10, jahreBisRente: null },
       kirchensteuer: false,
     });
     const mit = makeScenario({
-      person1: { bruttoJahr: 50000, fahrtstreckeKm: 10 },
+      person1: { bruttoJahr: 50000, fahrtstreckeKm: 10, jahreBisRente: null },
       kirchensteuer: true,
     });
 
@@ -97,7 +97,7 @@ describe('berechneNetto', () => {
 
   it('gibt Pauschalen korrekt zurück', () => {
     const scenario = makeScenario({
-      person1: { bruttoJahr: 50000, fahrtstreckeKm: 25 },
+      person1: { bruttoJahr: 50000, fahrtstreckeKm: 25, jahreBisRente: null },
     });
     const result = berechneNetto(scenario);
 
@@ -109,7 +109,7 @@ describe('berechneNetto', () => {
 
   it('0 Brutto ergibt 0 Netto', () => {
     const scenario = makeScenario({
-      person1: { bruttoJahr: 0, fahrtstreckeKm: 0 },
+      person1: { bruttoJahr: 0, fahrtstreckeKm: 0, jahreBisRente: null },
     });
     const result = berechneNetto(scenario);
 
